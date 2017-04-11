@@ -1,3 +1,4 @@
+import { Buttons } from '@lanetix/unum'
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -15,11 +16,11 @@ class List extends Component {
   render () {
     return (
       <div>
-        <button
+        <Buttons.PillButton
           onClick={() => { this.props.createFact() }}
         >
-          Create real-time graph!
-        </button>
+          create a fact!
+        </Buttons.PillButton>
         <ul>
           {this.props.list.map(({ id, data: { name } }) => (
             <li key={id}>

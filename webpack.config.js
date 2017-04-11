@@ -8,6 +8,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -23,11 +31,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': Object.keys(process.env).reduce((acc, key) => {
-        acc[key] = JSON.stringify(process.env[key])
-        return acc
-      }, {})
-    })
+    new webpack.EnvironmentPlugin(process.env)
   ]
 }
