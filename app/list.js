@@ -18,7 +18,7 @@ class List extends Component {
         <button
           onClick={() => { this.props.createFact() }}
         >
-          create a fact!
+          Create real-time graph!
         </button>
         <ul>
           {this.props.list.map(({ id, data: { name } }) => (
