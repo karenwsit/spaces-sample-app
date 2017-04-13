@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import DataGrid from 'react-data-grid'
 
 import { Avatar, Buttons, PageHeader, PageTitle, PageLabel, PageIcon } from '@lanetix/unum'
 
@@ -12,14 +13,17 @@ import {
 } from './actions'
 
 class Warehouse extends Component {
-  // componentWillMount () {
-  //   this.state = {}
-  // }
+  const columns = [
+    { name: 'Orders to Ship', key: 'orders_to_ship' },
+    { name: 'Overdue Shipments'}
+  ]
+
 
   render () {
     return (
       <div>
-        <h3>THIS WILL BE THE WAREHOUSE PAGE</h3>
+        <h2>Inventory</h2>
+        <DataGrid></DataGrid>
       </div>
     )
   }

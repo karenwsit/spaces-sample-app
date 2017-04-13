@@ -56,7 +56,7 @@ class RadarGraph extends Component {
   render () {
     return (
       <div>
-        <h1>Current Perfect Order Metric</h1>
+        <h1>Current Perfect Order Index</h1>
         <Radar data={data} options={options} width={900} height={350} getElementAtEvent={this.getElementAtEvent}/>
       </div>
     )

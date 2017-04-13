@@ -46,16 +46,16 @@ class Dashboard extends Component {
         <PillButton
           onClick={() => { this.showLineGraph() }}
         >
-          All Warehouses
+          West Coast Warehouses
         </PillButton>
-        <PillButton>Warehouse 1</PillButton>
+        <PillButton>San Diego Warehouse</PillButton>
         <PillButton
           onClick={() => { this.showWarehousePage() }}
           disabled={showWarehousePage}
         >
-          Warehouse 2
+          San Francisco Warehouse
         </PillButton>
-        <PillButton>Warehouse 3</PillButton>
+        <PillButton>Tacoma Warehouse</PillButton>
         {
           showWarehousePage
             ? <Warehouse />
