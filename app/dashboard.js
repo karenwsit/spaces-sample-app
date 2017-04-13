@@ -46,7 +46,7 @@ class Dashboard extends Component {
         <PillButton
           onClick={() => { this.showLineGraph() }}
         >
-          Aggregate
+          All Warehouses
         </PillButton>
         <PillButton>Warehouse 1</PillButton>
         <PillButton
