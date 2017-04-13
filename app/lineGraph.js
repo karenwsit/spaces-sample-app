@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux'
 import { Line } from 'react-chartjs-2'
 
 const fillRateData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["January", "February", "March", "April"],
     datasets: [
       {
-        label: 'Warehouse 1',
+        label: 'Los Angeles Warehouse',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(153, 102, 255, 0.4)',
@@ -25,10 +25,10 @@ const fillRateData = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [0.8, 0.72, 0.94, 0.37, 0.51, 0.68, 0.82]
+        data: [0.8, 0.72, 0.40, 0.59]
       },
       {
-        label: 'Warehouse 2',
+        label: 'San Francisco Warehouse',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -46,10 +46,10 @@ const fillRateData = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [0.68, 0.97, 0.96, 0.02, 0.33, 0.69, 0.73]
+        data: [0.68, 0.97, 0.96, 0.48]
       },
       {
-        label: 'Warehouse 3',
+        label: 'Tacoma Warehouse',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(255, 206, 86, 0.2)',
@@ -67,16 +67,16 @@ const fillRateData = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [0.91, 0.98, 0.84, 0.78, 0.90, 0.87, 0.80]
+        data: [0.91, 0.98, 0.84, 0.78]
       }
     ]
   }
 
   const damageFreeData = {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: ["January", "February", "March", "April"],
       datasets: [
         {
-          label: 'Warehouse 1',
+          label: 'Los Angeles Warehouse',
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(153, 102, 255, 0.4)',
@@ -94,10 +94,10 @@ const fillRateData = {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [0.8, 0.72, 0.94, 0.37, 0.51, 0.68, 0.82]
+          data: [0.8, 0.72, 0.76, 0.81]
         },
         {
-          label: 'Warehouse 2',
+          label: 'San Francisco Warehouse',
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -115,10 +115,10 @@ const fillRateData = {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [0.68, 0.97, 0.96, 0.02, 0.33, 0.69, 0.73]
+          data: [0.68, 0.97, 0.96, 0.19]
         },
         {
-          label: 'Warehouse 3',
+          label: 'Tacoma Warehouse',
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(255, 206, 86, 0.2)',
@@ -136,16 +136,16 @@ const fillRateData = {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [0.91, 0.98, 0.84, 0.78, 0.90, 0.87, 0.80]
+          data: [0.86, 0.9, 0.80, 0.78]
         }
       ]
     }
 
     const onTimeData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["January", "February", "March", "April"],
         datasets: [
           {
-            label: 'Warehouse 1',
+            label: 'Los Angeles Warehouse',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(153, 102, 255, 0.4)',
@@ -163,10 +163,10 @@ const fillRateData = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [0.8, 0.72, 0.94, 0.37, 0.51, 0.68, 0.82]
+            data: [0.8, 0.72, 0.94, 0.65]
           },
           {
-            label: 'Warehouse 2',
+            label: 'San Francisco Warehouse',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -184,10 +184,10 @@ const fillRateData = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [0.68, 0.97, 0.96, 0.02, 0.33, 0.69, 0.73]
+            data: [0.68, 0.97, 0.96, 0.71]
           },
           {
-            label: 'Warehouse 3',
+            label: 'Tacoma Warehouse',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(255, 206, 86, 0.2)',
@@ -205,16 +205,16 @@ const fillRateData = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [0.91, 0.98, 0.84, 0.78, 0.90, 0.87, 0.80]
+            data: [0.91, 0.98, 0.84, 0.78]
           }
         ]
       }
 
       const invoicingDocumentationData = {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          labels: ["January", "February", "March", "April"],
           datasets: [
             {
-              label: 'Warehouse 1',
+              label: 'Los Angeles Warehouse',
               fill: false,
               lineTension: 0.1,
               backgroundColor: 'rgba(153, 102, 255, 0.4)',
@@ -232,10 +232,10 @@ const fillRateData = {
               pointHoverBorderWidth: 2,
               pointRadius: 1,
               pointHitRadius: 10,
-              data: [0.8, 0.72, 0.94, 0.37, 0.51, 0.68, 0.82]
+              data: [0.8, 0.72, 0.94, 0.56]
             },
             {
-              label: 'Warehouse 2',
+              label: 'San Francisco Warehouse',
               fill: false,
               lineTension: 0.1,
               backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -253,10 +253,10 @@ const fillRateData = {
               pointHoverBorderWidth: 2,
               pointRadius: 1,
               pointHitRadius: 10,
-              data: [0.68, 0.97, 0.96, 0.02, 0.33, 0.69, 0.73]
+              data: [0.68, 0.97, 0.96, 0.86]
             },
             {
-              label: 'Warehouse 3',
+              label: 'Tacoma Warehouse',
               fill: false,
               lineTension: 0.1,
               backgroundColor: 'rgba(255, 206, 86, 0.2)',
@@ -274,13 +274,21 @@ const fillRateData = {
               pointHoverBorderWidth: 2,
               pointRadius: 1,
               pointHitRadius: 10,
-              data: [0.91, 0.98, 0.84, 0.78, 0.90, 0.87, 0.80]
+              data: [0.91, 0.98, 0.84, 0.78]
             }
           ]
         }
 
 const options = {
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  scales: {
+    yAxes: [{
+      ticks: {
+        max: 1
+        min: 0
+      }
+    }]
+  }
 }
 
 class LineGraph extends Component {
@@ -289,16 +297,16 @@ class LineGraph extends Component {
   render () {
     return (
       <div>
-        <h2>2017 Fill Rate %</h2>
-        <Line data={fillRateData} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>2017 Damage Free %</h2>
-        <Line data={damageFreeData} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>2017 On Time %</h2>
-        <Line data={onTimeData} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>2017 Accurate Invoicing & Documentation %</h2>
-        <Line data={invoicingDocumentationData} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>2017 Completeness %</h2>
-        <Line data={invoicingDocumentationData} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <h2>Accurate Invoicing & Documentation %</h2>
+        <Line data={invoicingDocumentationData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <h2>Completeness %</h2>
+        <Line data={onTimeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <h2>Damage Free %</h2>
+        <Line data={damageFreeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <h2>Fill Rate %</h2>
+        <Line data={fillRateData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <h2>On Time %</h2>
+        <Line data={onTimeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
       </div>
     )
   }

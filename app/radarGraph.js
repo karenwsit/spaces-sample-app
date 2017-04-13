@@ -11,7 +11,7 @@ const data = {
   labels: ['On Time %', 'Fill Rate %', 'Completeness %', 'Damage Free %', 'Accurate Invoicing & Documentation %'],
   datasets: [
     {
-      label: 'Warehouse 1',
+      label: 'Los Angeles Warehouse',
       backgroundColor: 'rgba(153, 102, 255, 0.2)',
       borderColor: 'rgba(153, 102, 255, .4)',
       pointBackgroundColor: 'rgba(153, 102, 255, 1)',
@@ -21,17 +21,17 @@ const data = {
       data: [0.65, 0.59, 0.90, 0.81, 0.56]
     },
     {
-      label: 'Warehouse 2',
+      label: 'San Francisco Warehouse',
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
       pointBackgroundColor: 'rgba(75, 192, 192, 1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
-      data: [0.28, 0.48, 0.40, 0.19, 0.96]
+      data: [0.28, 0.48, 0.71, 0.19, 0.86]
     },
     {
-      label: 'Warehouse 3',
+      label: 'Tacoma Warehouse',
       backgroundColor: 'rgba(255, 206, 86, 0.2)',
       borderColor: 'rgba(255, 206, 86, 1)',
       pointBackgroundColor: 'rgba(255, 206, 86, 1)',

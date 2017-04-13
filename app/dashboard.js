@@ -48,7 +48,7 @@ class Dashboard extends Component {
         >
           West Coast Warehouses
         </PillButton>
-        <PillButton>San Diego Warehouse</PillButton>
+        <PillButton>Los Angeles Warehouse</PillButton>
         <PillButton
           onClick={() => { this.showWarehousePage() }}
           disabled={showWarehousePage}
