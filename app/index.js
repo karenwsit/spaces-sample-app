@@ -7,11 +7,7 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 
 import { contentId } from './config'
-import Item from './item'
-import List from './list'
-import LineGraph from './lineGraph'
-import RadarGraph from './radarGraph'
-import WarehouseNav from './warehouseNav'
+import Dashboard from './dashboard'
 import reducer from './reducer'
 
 const store = createStore(
@@ -28,9 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     {
       <div>
-        <RadarGraph />
-        <WarehouseNav />
-        <LineGraph />
+        <Dashboard />
       </div>
     }
   </Provider>,

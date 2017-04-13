@@ -18,9 +18,10 @@ class WarehouseNav extends Component {
 
   showWarehousePage () {
     this.setState({ showWarehouse: true })
+    console.log('THIS SHOULD LOG YO')
   }
 
-  console.log('THIS SHOULD LOG YO')
+
 
   render () {
     return (
