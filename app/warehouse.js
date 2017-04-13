@@ -11,35 +11,22 @@ import {
   fetchList
 } from './actions'
 
-class WarehouseNav extends Component {
-  componentWillMount () {
-    this.state = {}
-  }
-
-  showWarehousePage () {
-    this.setState({ showWarehouse: true })
-    console.log('THIS SHOULD LOG YO')
-  }
-
-
+class Warehouse extends Component {
+  // componentWillMount () {
+  //   this.state = {}
+  // }
 
   render () {
     return (
       <div>
-      <button>Warehouse 1</button>
-      <button
-        onClick={() => { this.showWarehousePage }}
-      >
-        Warehouse BLAH BLAHBLAH
-      </button>
-      <button>Warehouse 3</button>
+        <h3>THIS WILL BE THE WAREHOUSE PAGE</h3>
       </div>
     )
   }
 }
 
 export default connect(
-  ({ warehouseNav }) => ({ warehouseNav }),
+  ({ warehouse }) => ({ warehouse }),
   (dispatch) => bindActionCreators(
     {
       createFact,
@@ -47,4 +34,4 @@ export default connect(
     },
     dispatch
   )
-)(WarehouseNav)
+)(Warehouse)

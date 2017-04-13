@@ -284,9 +284,7 @@ const options = {
 }
 
 class LineGraph extends Component {
-
-  getElementAtEvent (event) { console.log('HI TAYLOR THIS IS NESTING', event) }
-  onElementsClick (elems) { getElementatEvent(elems)  }
+  getElementAtEvent (elem) { console.log('THIS IS THE ELEMENT', elem) }
 
   render () {
     return (

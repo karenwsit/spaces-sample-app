@@ -5,7 +5,7 @@ import { Avatar, Buttons, PageHeader, PageTitle, PageLabel, PageIcon } from '@la
 
 import LineGraph from './lineGraph'
 import RadarGraph from './radarGraph'
-import WarehouseNav from './warehouseNav'
+import Warehouse from './warehouse'
 
 const { PillButton, SettingsCircleButton } = Buttons
 
@@ -28,22 +28,44 @@ class Dashboard extends Component {
       showLineGraph: false,
       showWarehousePage: true
     })
-    console.log('THE BUTTON WORKS')
-    console.log('this.state yo', this.state)
+  }
+
+  showLineGraph () {
+    this.setState({
+      showLineGraph: true,
+      showWarehousePage: false
+    })
   }
 
   render () {
+    const { showRadarGraph, showLineGraph, showWarehousePage } = this.state
+
     return (
       <div>
         <RadarGraph />
+        <PillButton
+          onClick={() => { this.showLineGraph() }}
+        >
+          Aggregate
+        </PillButton>
         <PillButton>Warehouse 1</PillButton>
         <PillButton
-          onClick={ () => { this.showWarehousePage } }
+          onClick={() => { this.showWarehousePage() }}
+          disabled={showWarehousePage}
         >
           Warehouse 2
         </PillButton>
         <PillButton>Warehouse 3</PillButton>
-        <LineGraph />
+        {
+          showWarehousePage
+            ? <Warehouse />
+            : null
+        }
+        {
+          showLineGraph
+            ? <LineGraph />
+            : null
+        }
       </div>
     )
   }
