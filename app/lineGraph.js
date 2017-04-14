@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Line } from 'react-chartjs-2'
 import { Avatar, Buttons, PageHeader, PageTitle, PageLabel, PageIcon } from '@lanetix/unum'
+import { spaceId } from './config.js'
 
 const fillRateData = {
     labels: ["January", "February", "March", "April"],
@@ -280,6 +281,128 @@ const fillRateData = {
           ]
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const accountFillRateData = {
+      labels: ["January", "February", "March", "April"],
+      datasets: [
+        {
+          label: 'Nike',
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: 'miter',
+          pointBorderColor: 'rgba(75, 192, 192, 1)',
+          pointBackgroundColor: '#fff',
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointHoverBorderColor: 'rgba(220,220,220,1)',
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: [0.68, 0.97, 0.96, 0.67]
+        }
+      ]
+    }
+
+    const accountDamageFreeData = {
+        labels: ["January", "February", "March", "April"],
+        datasets: [
+          {
+            label: 'Nike',
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(75, 192, 192, 1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [0.68, 0.97, 0.96, 0.19]
+          }
+        ]
+      }
+
+      const accountOnTimeData = {
+          labels: ["January", "February", "March", "April"],
+          datasets: [
+            {
+              label: 'Nike',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: 'rgba(75, 192, 192, 1)',
+              pointBackgroundColor: '#fff',
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+              pointHoverBorderColor: 'rgba(220,220,220,1)',
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [0.68, 0.97, 0.96, 0.71]
+            }
+          ]
+        }
+
+        const accountInvoicingDocumentationData = {
+            labels: ["January", "February", "March", "April"],
+            datasets: [
+              {
+                label: 'Nike',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: 'rgba(75, 192, 192, 1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [0.68, 0.97, 0.96, 0.86]
+              }
+            ]
+          }
+
 const options = {
   legend: {
     labels: {
@@ -299,6 +422,8 @@ class LineGraph extends Component {
 
   render () {
     return (
+      spaceId == 2753
+      ?
       <div>
         <PageTitle>Accurate Invoicing & Documentation %</PageTitle>
         <Line data={invoicingDocumentationData}  options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
@@ -310,6 +435,19 @@ class LineGraph extends Component {
         <Line data={fillRateData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
         <PageTitle>On Time %</PageTitle>
         <Line data={onTimeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+      </div>
+      :
+      <div>
+        <PageTitle>Accurate Invoicing & Documentation %</PageTitle>
+        <Line data={accountInvoicingDocumentationData}  options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Completeness %</PageTitle>
+        <Line data={accountOnTimeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Damage Free %</PageTitle>
+        <Line data={accountDamageFreeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Fill Rate %</PageTitle>
+        <Line data={accountFillRateData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>On Time %</PageTitle>
+        <Line data={accountOnTimeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
       </div>
     )
   }
