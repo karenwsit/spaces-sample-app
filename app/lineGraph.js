@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Line } from 'react-chartjs-2'
+import { Avatar, Buttons, PageHeader, PageTitle, PageLabel, PageIcon } from '@lanetix/unum'
 
 const fillRateData = {
     labels: ["January", "February", "March", "April"],
@@ -46,7 +47,7 @@ const fillRateData = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [0.68, 0.97, 0.96, 0.48]
+        data: [0.68, 0.97, 0.96, 0.67]
       },
       {
         label: 'Tacoma Warehouse',
@@ -280,33 +281,35 @@ const fillRateData = {
         }
 
 const options = {
-  maintainAspectRatio: false,
+  legend: {
+    labels: {
+      fontSize: 14
+    }
+  },
   scales: {
     yAxes: [{
       ticks: {
-        max: 1
-        min: 0
+        beginAtZero: true
       }
     }]
   }
 }
 
 class LineGraph extends Component {
-  getElementAtEvent (elem) { console.log('THIS IS THE ELEMENT', elem) }
 
   render () {
     return (
       <div>
-        <h2>Accurate Invoicing & Documentation %</h2>
-        <Line data={invoicingDocumentationData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>Completeness %</h2>
-        <Line data={onTimeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>Damage Free %</h2>
-        <Line data={damageFreeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>Fill Rate %</h2>
-        <Line data={fillRateData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
-        <h2>On Time %</h2>
-        <Line data={onTimeData} options={options} width={900} height={250} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Accurate Invoicing & Documentation %</PageTitle>
+        <Line data={invoicingDocumentationData}  options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Completeness %</PageTitle>
+        <Line data={onTimeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Damage Free %</PageTitle>
+        <Line data={damageFreeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>Fill Rate %</PageTitle>
+        <Line data={fillRateData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
+        <PageTitle>On Time %</PageTitle>
+        <Line data={onTimeData} options={options} width={900} height={200} getElementAtEvent={this.getElementAtEvent}/>
       </div>
     )
   }

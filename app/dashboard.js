@@ -7,8 +7,6 @@ import LineGraph from './lineGraph'
 import RadarGraph from './radarGraph'
 import Warehouse from './warehouse'
 
-const { PillButton, SettingsCircleButton } = Buttons
-
 import {
   createFact,
   fetchList
@@ -41,46 +39,13 @@ class Dashboard extends Component {
     const { showRadarGraph, showLineGraph, showWarehousePage } = this.state
 
     return (
-      <div>
+      <div className='wms'>
         <RadarGraph />
-        <PillButton
-          onClick={() => { this.showLineGraph() }}
-        >
-          West Coast Warehouses
-        </PillButton>
-        <PillButton>Los Angeles Warehouse</PillButton>
-        <PillButton
-          onClick={() => { this.showWarehousePage() }}
-          disabled={showWarehousePage}
-        >
-          San Francisco Warehouse
-        </PillButton>
-        <PillButton>Tacoma Warehouse</PillButton>
-        {
-          showWarehousePage
-            ? <Warehouse />
-            : null
-        }
-        {
-          showLineGraph
-            ? <LineGraph />
-            : null
-        }
+        <LineGraph />
       </div>
     )
   }
 }
-
-// List.propTypes = {
-//   createFact: PropTypes.func.isRequired,
-//   fetchList: PropTypes.func.isRequired,
-//   list: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.number.isRequired,
-//     data: PropTypes.shape({
-//       name: PropTypes.string.isRequired
-//     }).isRequired
-//   })).isRequired
-// }
 
 export default connect(
   ({ dashboard }) => ({ dashboard }),

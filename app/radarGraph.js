@@ -2,9 +2,22 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Radar } from 'react-chartjs-2'
+import { Avatar, Buttons, PageHeader, PageTitle, PageLabel, PageIcon } from '@lanetix/unum'
 
 const options = {
-  maintainAspectRatio: false
+  defaultFontSize: 16,
+  legend: {
+    position: 'right',
+    labels: {
+      padding: 20,
+      fontSize: 14
+    }
+  },
+  layout: {
+    padding: {
+      left: 400
+    }
+  }
 }
 
 const data = {
@@ -28,7 +41,7 @@ const data = {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
-      data: [0.28, 0.48, 0.71, 0.19, 0.86]
+      data: [0.71, 0.67, 0.71, 0.19, 0.86]
     },
     {
       label: 'Tacoma Warehouse',
@@ -45,27 +58,15 @@ const data = {
 
 
 class RadarGraph extends Component {
-  // componentWillMount () {
-  //   this.props.fetchGraph()
-  // }
-
-  getElementAtEvent (event) { console.log('HI TAYLOR THIS IS NESTING', event) }
-  onElementsClick (elems) { getElementatEvent(elems)  }
-
-
   render () {
     return (
       <div>
-        <h1>Current Perfect Order Index</h1>
+        <PageTitle>Current Perfect Order Index</PageTitle>
         <Radar data={data} options={options} width={900} height={350} getElementAtEvent={this.getElementAtEvent}/>
       </div>
     )
   }
 }
-
-// BarGraph.propTypes = {
-//
-// }
 
 export default connect(
   ({ radarGraph }) => ({ radarGraph }),
